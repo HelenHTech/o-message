@@ -1,5 +1,5 @@
 {
-	"description": "Product messaging component used for alerting and informing",
+"description": "Product messaging component used for alerting and informing",
 	"origamiType": "module",
 	"origamiCategory": "components",
 	"origamiVersion": 1,
@@ -23,7 +23,144 @@
 		"js": "demos/src/demo.js",
 		"template": "demos/src/message-template.mustache",
 		"documentClasses": "",
-		"dependencies": ["o-fonts","o-normalise"]
+		"dependencies": ["o-fonts","o-normalise"],
+		"variantRules": [
+			{
+				"type": "alert",
+				"config": [
+					{
+						"name": "status",
+						"inputType": "select",
+						"required": true,
+						"options": [
+							"error",
+							"neutral",
+							"success"
+						]
+					},
+					{
+						"name": "layout",
+						"inputType": "radio",
+						"required": false,
+						"options": [
+							"full width",
+							"inner"
+						]
+					},
+					{
+						"name": "highlight",
+						"inputType": "text",
+						"required": false
+					},
+					{
+						"name": "content",
+						"inputType": "textarea",
+						"required": false
+					},
+					{
+						"name": "button",
+						"inputType": "text",
+						"required": false
+					},
+					{
+						"name": "linkTitle",
+						"inputType": "text"
+					},
+					{
+						"name": "linkURL",
+						"inputType": "url"
+					}
+				]
+			},
+			{
+				"type": "notice",
+				"config": [
+					{
+						"name": "status",
+						"inputType": "select",
+						"required": true,
+						"options": [
+							"inform",
+							"warning",
+							"warning-light"
+						]
+					},
+					{
+						"name": "layout",
+						"inputType": "radio",
+						"required": false,
+						"options": [
+							"full width",
+							"inner"
+						]
+					},
+					{
+						"name": "highlight",
+						"inputType": "text",
+						"required": false
+					},
+					{
+						"name": "content",
+						"inputType": "textarea",
+						"required": false
+					},
+					{
+						"name": "additionalContent",
+						"inputType": "textarea",
+						"required": false
+					},
+					{
+						"name": "button",
+						"inputType": "text",
+						"required": false
+					},
+					{
+						"name": "linkTitle",
+						"inputType": "text"
+					},
+					{
+						"name": "linkURL",
+						"inputType": "url"
+					}
+				]
+			},
+			{
+				"type": "action",
+				"config": [
+					{
+						"name": "alignment",
+						"inputType": "checkbox",
+						"required": false,
+						"options": [
+							"centralised"
+						]
+					},
+					{
+						"name": "highlight",
+						"inputType": "text",
+						"required": false
+					},
+					{
+						"name": "content",
+						"inputType": "textarea",
+						"required": false
+					},
+					{
+						"name": "button",
+						"inputType": "text",
+						"required": false
+					},
+					{
+						"name": "linkTitle",
+						"inputType": "text"
+					},
+					{
+						"name": "linkURL",
+						"inputType": "url"
+					}
+				]
+			}
+		]
 	},
 	"demos": [
 		{
@@ -34,11 +171,11 @@
 				"type": "alert",
 				"status": "success",
 				"highlight": "Hooray!",
+				"layout": "full width",
 				"content": "The quick brown fox jumped over the lazy dogs!",
-				"actions": {
-					"button": true,
-					"link": true
-				}
+				"button": "Click me!",
+				"linkTitle": "I'm a link",
+				"linkURL": "https://www.example.com"
 			}
 		},
 		{
@@ -46,16 +183,15 @@
 			"name": "alert-inner-success",
 			"description": "Alert message for a positive response to an action, styled to fit within another container",
 			"data": {
-				"inner": true,
 				"type": "alert",
 				"status": "success",
 				"highlight": "Hooray!",
+				"layout": "inner",
 				"content": "The quick brown fox jumped over the lazy dogs!",
 				"additionalContent": "Did you know that that sentence uses all of the letters in the alphabet at least once?",
-				"actions": {
-					"button": true,
-					"link": true
-				}
+				"button": "Click me!",
+				"linkTitle": "I'm a link",
+				"linkURL": "https://www.example.com"
 			}
 		},
 		{
@@ -65,11 +201,12 @@
 			"data": {
 				"type": "alert",
 				"status": "neutral",
+				"highlight": "Hooray!",
+				"layout": "full width",
 				"content": "There's a fox, and some lazy dogs. Many lazy dogs. Many, many, many lazy dogs. Only one fox. Many, many, many lazy dogs.",
-				"actions": {
-					"button": true,
-					"link": true
-				}
+				"button": "Click me!",
+				"linkTitle": "I'm a link",
+				"linkURL": "https://www.example.com"
 			}
 		},
 		{
@@ -77,15 +214,14 @@
 			"name": "alert-inner-neutral",
 			"description": "Alert message for an informative response to an action, styled to fit within another container",
 			"data": {
-				"inner": true,
 				"type": "alert",
-				"status": "neutral",
-				"highlight": "Meh.",
-				"detail": "The quick brown fox did not jump over the lazy dogs.",
-				"actions": {
-					"button": true,
-					"link": true
-				}
+				"status": "netural",
+				"highlight": "Meh",
+				"layout": "inner",
+				"content": "The quick brown fox did a small hop.",
+				"button": "Click me!",
+				"linkTitle": "I'm a link",
+				"linkURL": "https://www.example.com"
 			}
 		},
 		{
@@ -95,11 +231,12 @@
 			"data": {
 				"type": "alert",
 				"status": "error",
-				"content": "The quick brown fox did <span class='o-message__content-highlight'>not</span> jump over the lazy dogs.",
-				"actions": {
-					"button": true,
-					"link": true
-				}
+				"highlight": "Oops.",
+				"layout": "full width",
+				"content": "The quick brown fox did not jump over the lazy dogs!",
+				"button": "Click me!",
+				"linkTitle": "I'm a link",
+				"linkURL": "https://www.example.com"
 			}
 		},
 		{
@@ -107,16 +244,15 @@
 			"name": "alert-inner-error",
 			"description": "Alert message for a negative response to an action, styled to fit within another container",
 			"data": {
-				"inner": true,
 				"type": "alert",
 				"status": "error",
 				"highlight": "Oops.",
-				"content": "The quick brown fox did <span class='o-message__content-highlight'>not</span> jump over the lazy dogs.",
+				"layout": "inner",
+				"content": "The quick brown fox did not jump over the lazy dogs!",
 				"additionalContent": "But that sentence still uses all of the letters in the alphabet at least once!",
-				"actions": {
-					"button": true,
-					"link": true
-				}
+				"button": "Click me!",
+				"linkTitle": "I'm a link",
+				"linkURL": "https://www.example.com"
 			}
 		},
 		{
@@ -126,11 +262,11 @@
 			"data": {
 				"type": "notice",
 				"status": "inform",
+				"layout": "full width",
 				"content": "There are lazy dogs, maybe in a field, maybe not. It's important that you are informed of this fact.",
-				"actions": {
-					"button": true,
-					"link": true
-				}
+				"button": "Click me!",
+				"linkTitle": "I'm a link",
+				"linkURL": "https://www.example.com"
 			}
 		},
 		{
@@ -138,15 +274,14 @@
 			"name": "notice-inner-inform",
 			"description": "Notice message to convey information, styled to fit within another container",
 			"data": {
-				"inner": true,
 				"type": "notice",
 				"status": "inform",
+				"layout": "inner",
 				"content": "There are lazy dogs, maybe in a field, maybe not. It's important that you are informed of this fact.",
-				"actions": {
-					"button": true,
-					"link": true
-				},
-				"noCloseButton": true
+				"button": "Click me!",
+				"linkTitle": "I'm a link",
+				"linkURL": "https://www.example.com",
+				"closeButton": false
 			}
 		},
 		{
@@ -156,7 +291,8 @@
 			"data": {
 				"type": "notice",
 				"status": "warning-light",
-				"content": "There are lazy dogs, maybe in a field, maybe not. It's important that you are informed of this fact."
+				"layout": "full width",
+				"content": "There are lazy dogs, maybe in a field, maybe not. It's important that you are informed of this fact.",
 			},
 			"brands": [
 				"internal"
@@ -167,15 +303,14 @@
 			"name": "notice-inner-warning-light",
 			"description": "Notice message to emit a light warning, styled to fit within another container",
 			"data": {
-				"inner": true,
 				"type": "notice",
 				"status": "warning-light",
-				"content": "There are lazy dogs, maybe in a field, maybe not. It's important that you are informed of this fact. There may also be a fox. This is unconfirmed.",
-				"actions": {
-					"button": true,
-					"link": true
-				},
-				"noCloseButton": true
+				"layout": "inner",
+				"content": "There are lazy dogs, maybe in a field, maybe not. It's important that you are informed of this fact.",
+				"button": "Click me!",
+				"linkTitle": "I'm a link",
+				"linkURL": "https://www.example.com",
+				"closeButton": false
 			},
 			"brands": [
 				"internal"
@@ -188,7 +323,8 @@
 			"data": {
 				"type": "notice",
 				"status": "warning",
-				"content": "There are lazy dogs, maybe in a field, maybe not. It's important that you are informed of this fact."
+				"layout": "full width",
+				"content": "There are lazy dogs, maybe in a field, maybe not. It's important that you are informed of this fact.",
 			},
 			"brands": [
 				"internal"
@@ -199,10 +335,14 @@
 			"name": "notice-inner-warning",
 			"description": "Notice message to emit a strong warning, styled to fit within another container",
 			"data": {
-				"inner": true,
 				"type": "notice",
 				"status": "warning",
-				"content": "There are lazy dogs, maybe in a field, maybe not. It's important that you are informed of this fact. There may also be a fox. This is unconfirmed."
+				"layout": "inner",
+				"content": "There are lazy dogs, maybe in a field, maybe not. It's important that you are informed of this fact.",
+				"button": "Click me!",
+				"linkTitle": "I'm a link",
+				"linkURL": "https://www.example.com",
+				"closeButton": false
 			},
 			"brands": [
 				"internal"
@@ -215,12 +355,11 @@
 			"data":  {
 				"type": "action",
 				"status": "inform-inverse",
+				"layout": "full width",
 				"centralised": true,
-				"content": "The quick brown fox did <span class='o-message__content-highlight'>not</span> jump over the lazy dogs.",
-				"actions": {
-					"button": true
-				},
-				"noCloseButton": true
+				"content": "There are lazy dogs, maybe in a field, maybe not. It's important that you are informed of this fact.",
+				"button": "Click me!",
+				"closeButton": false
 			},
 			"brands": [
 				"internal"
