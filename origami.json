@@ -24,7 +24,7 @@
 		"template": "demos/src/message-template.mustache",
 		"documentClasses": "",
 		"dependencies": ["o-fonts","o-normalise"],
-		"variantRules": [
+		"variants": [
 			{
 				"type": "alert",
 				"config": [
@@ -292,7 +292,7 @@
 				"type": "notice",
 				"status": "warning-light",
 				"layout": "full width",
-				"content": "There are lazy dogs, maybe in a field, maybe not. It's important that you are informed of this fact.",
+				"content": "There are lazy dogs, maybe in a field, maybe not. It's important that you are informed of this fact."
 			},
 			"brands": [
 				"internal"
@@ -324,7 +324,7 @@
 				"type": "notice",
 				"status": "warning",
 				"layout": "full width",
-				"content": "There are lazy dogs, maybe in a field, maybe not. It's important that you are informed of this fact.",
+				"content": "There are lazy dogs, maybe in a field, maybe not. It's important that you are informed of this fact."
 			},
 			"brands": [
 				"internal"
