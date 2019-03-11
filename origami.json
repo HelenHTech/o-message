@@ -1,5 +1,5 @@
 {
-"description": "Product messaging component used for alerting and informing",
+	"description": "Product messaging component used for alerting and informing",
 	"origamiType": "module",
 	"origamiCategory": "components",
 	"origamiVersion": 1,
@@ -21,7 +21,7 @@
 	"demosDefaults": {
 		"sass": "demos/src/demo.scss",
 		"js": "demos/src/demo.js",
-		"template": "demos/src/message-template.mustache",
+		"template": "demos/src/react-template.js",
 		"documentClasses": "",
 		"dependencies": ["o-fonts","o-normalise"],
 		"variants": [

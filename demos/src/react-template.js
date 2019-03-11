@@ -1,5 +1,5 @@
-import React from "react";
-import "./local/message.css";
+import { React } from "react";
+// import "./demo.scss";
 
 function OMessage(props) {
 	const demo = props.state || props.demo;
