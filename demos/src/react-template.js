@@ -4,7 +4,6 @@ import "./demo.scss";
 function OMessage(props) {
 	const demo = props.state || props.demo;
 	const actions = demo.button || (demo.linkTitle && demo.linkURL)
-
 	return <div className={`o-message o-message--${demo.type} ${demo.layout === "inner" ? 'o-message--inner' : ''} o-message--${demo.status}`} data-o-component="o-message" data-close={demo.noCloseButton ? "true" : 'false'}>
 		<div className="o-message__container">
 			<div className={"o-message__content " + (demo.centralised ? 'o-message__content--center-align' : '')} >

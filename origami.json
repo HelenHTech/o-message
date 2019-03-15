@@ -33,9 +33,9 @@
 						"inputType": "select",
 						"required": true,
 						"options": [
-							"error",
-							"neutral",
-							"success"
+							{ "name": "error" },
+							{ "name": "neutral" },
+							{ "name": "success" }
 						]
 					},
 					{
@@ -43,8 +43,8 @@
 						"inputType": "radio",
 						"required": false,
 						"options": [
-							"full width",
-							"inner"
+							{ "name": "full width" },
+							{ "name": "inner" }
 						]
 					},
 					{
@@ -80,9 +80,15 @@
 						"inputType": "select",
 						"required": true,
 						"options": [
-							"inform",
-							"warning",
-							"warning-light"
+							{ "name": "inform" },
+							{ 
+								"name": "warning",
+								"brands": [ "internal" ]
+							},
+							{ 
+								"name": "warning-light",
+								"brands": [ "internal" ]
+							}
 						]
 					},
 					{
@@ -90,8 +96,8 @@
 						"inputType": "radio",
 						"required": false,
 						"options": [
-							"full width",
-							"inner"
+							{ "name": "full width" },
+							{ "name": "inner" }
 						]
 					},
 					{
@@ -132,7 +138,7 @@
 						"inputType": "checkbox",
 						"required": false,
 						"options": [
-							"centralised"
+							{ "name": "centralised" }
 						]
 					},
 					{
@@ -267,7 +273,11 @@
 				"button": "Click me!",
 				"linkTitle": "I'm a link",
 				"linkURL": "https://www.example.com"
-			}
+			},
+			"brands": [
+				"master",
+				"internal"
+			]
 		},
 		{
 			"title": "Notice Inner: Inform",
@@ -282,7 +292,11 @@
 				"linkTitle": "I'm a link",
 				"linkURL": "https://www.example.com",
 				"closeButton": false
-			}
+			},
+			"brands": [
+				"master",
+				"internal"
+			]
 		},
 		{
 			"title": "Notice: Warning Light",
