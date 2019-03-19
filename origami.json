@@ -276,7 +276,8 @@
 			},
 			"brands": [
 				"master",
-				"internal"
+				"internal",
+				"whitelabel"
 			]
 		},
 		{
@@ -295,7 +296,8 @@
 			},
 			"brands": [
 				"master",
-				"internal"
+				"internal",
+				"whitelabel"
 			]
 		},
 		{
